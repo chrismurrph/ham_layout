@@ -1,6 +1,8 @@
 package example;
 
-import com.syncleus.dann.graph.drawing.hyperassociativemap.HyperassociativeMap;
+import au.com.seasoft.ham.InteropEdge;
+import au.com.seasoft.ham.InteropNode;
+import com.syncleus.dann.graph.Graph;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -14,55 +16,58 @@ import java.util.Set;
  */
 public class TestExampleGraph {
 
-    private ExampleGraph graph = new ExampleGraph();
-    private HyperassociativeMap ham = new MyHAM(graph, 2);
+    private SetupExampleGraph graph = new SetupExampleGraph();
+
+    private Graph getGraph() {
+        return graph.getGraph();
+    }
 
     @Test
     public void nodesWereAdded() {
-        Assert.assertEquals( 12, graph.getNodes().size());
+        Assert.assertEquals( 12, graph.getGraph().getNodes().size());
     }
 
     @Test
     public void edgesWereAdded() {
-        Assert.assertEquals( 14, graph.getEdges().size());
+        Assert.assertEquals( 14, graph.getGraph().getEdges().size());
     }
 
     @Test
     public void adjacentNodes() {
-        MyNode node9 = new MyNode( 9);
+        InteropNode node9 = new InteropNode( 9);
         Set<Integer> expectedAdjacentNodes = new HashSet<Integer>();
         expectedAdjacentNodes.add( 8);
         expectedAdjacentNodes.add( 10);
         expectedAdjacentNodes.add( 11);
-        List adjacentNodes = graph.getAdjacentNodes( node9);
-        Assert.assertEquals( expectedAdjacentNodes, new HashSet<Integer>( MyNode.convertToInts( adjacentNodes)));
+        List adjacentNodes = getGraph().getAdjacentNodes( node9);
+        Assert.assertEquals( expectedAdjacentNodes, new HashSet<Integer>( InteropNode.convertToInts( adjacentNodes)));
     }
 
     @Test
     public void adjacentEdges() {
-        MyNode node9 = new MyNode( 9);
-        Set<MyEdge> expectedAdjacentEdges = new HashSet<MyEdge>();
-        expectedAdjacentEdges.add( new MyEdge(new MyNode(9), new MyNode(11)));
-        expectedAdjacentEdges.add( new MyEdge(new MyNode(9), new MyNode(10)));
-        expectedAdjacentEdges.add( new MyEdge(new MyNode(8), new MyNode(9)));
-        Set adjacentEdges = graph.getAdjacentEdges( node9);
+        InteropNode node9 = new InteropNode( 9);
+        Set<InteropEdge> expectedAdjacentEdges = new HashSet<InteropEdge>();
+        expectedAdjacentEdges.add( new InteropEdge(new InteropNode(9), new InteropNode(11)));
+        expectedAdjacentEdges.add( new InteropEdge(new InteropNode(9), new InteropNode(10)));
+        expectedAdjacentEdges.add( new InteropEdge(new InteropNode(8), new InteropNode(9)));
+        Set adjacentEdges = getGraph().getAdjacentEdges( node9);
         Assert.assertEquals( expectedAdjacentEdges, adjacentEdges);
     }
 
     @Test
     public void traversableNodes1() {
-        MyNode node12 = new MyNode( 12);
-        List<MyNode> expectedTraversableNodes = new ArrayList<MyNode>();
-        List traversableNodes = graph.getTraversableNodes( node12);
+        InteropNode node12 = new InteropNode( 12);
+        List<InteropNode> expectedTraversableNodes = new ArrayList<InteropNode>();
+        List traversableNodes = getGraph().getTraversableNodes( node12);
         Assert.assertEquals( expectedTraversableNodes, traversableNodes);
     }
 
     @Test
     public void traversableNodes2() {
-        MyNode node1 = new MyNode( 1);
-        List<MyNode> expectedTraversableNodes = new ArrayList<MyNode>();
-        expectedTraversableNodes.add( new MyNode( 3));
-        List traversableNodes = graph.getTraversableNodes( node1);
+        InteropNode node1 = new InteropNode( 1);
+        List<InteropNode> expectedTraversableNodes = new ArrayList<InteropNode>();
+        expectedTraversableNodes.add( new InteropNode( 3));
+        List traversableNodes = getGraph().getTraversableNodes( node1);
         Assert.assertEquals( expectedTraversableNodes, traversableNodes);
     }
 
@@ -73,11 +78,11 @@ public class TestExampleGraph {
      */
     @Test
     public void traversableNodes3() {
-        MyNode node7 = new MyNode( 7);
-        List<MyNode> expectedTraversableNodes = new ArrayList<MyNode>();
-        expectedTraversableNodes.add( new MyNode( 6));
-        expectedTraversableNodes.add( new MyNode( 8));
-        List traversableNodes = graph.getTraversableNodes( node7);
+        InteropNode node7 = new InteropNode( 7);
+        List<InteropNode> expectedTraversableNodes = new ArrayList<InteropNode>();
+        expectedTraversableNodes.add( new InteropNode( 6));
+        expectedTraversableNodes.add( new InteropNode( 8));
+        List traversableNodes = getGraph().getTraversableNodes( node7);
         Assert.assertEquals( expectedTraversableNodes, traversableNodes);
     }
 

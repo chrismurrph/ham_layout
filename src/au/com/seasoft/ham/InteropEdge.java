@@ -1,4 +1,4 @@
-package example;
+package au.com.seasoft.ham;
 
 import com.syncleus.dann.graph.TraversableCloud;
 
@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class MyEdge implements TraversableCloud {
-    public MyNode sourceNode;
-    public MyNode targetNode;
+public class InteropEdge implements TraversableCloud {
+    public InteropNode sourceNode;
+    public InteropNode targetNode;
 
-    public MyEdge(MyNode sourceNode, MyNode targetNode) {
+    public InteropEdge(InteropNode sourceNode, InteropNode targetNode) {
         this.sourceNode = sourceNode;
         this.targetNode = targetNode;
     }
@@ -24,9 +24,9 @@ public class MyEdge implements TraversableCloud {
     @Override
     public boolean equals(final Object compareObj)
     {
-        if( !(compareObj instanceof MyEdge) )
+        if( !(compareObj instanceof InteropEdge) )
             return false;
-        final MyEdge compareWith = (MyEdge) compareObj;
+        final InteropEdge compareWith = (InteropEdge) compareObj;
         return (compareWith.sourceNode.id == this.sourceNode.id &&
                 compareWith.targetNode.id == this.targetNode.id);
     }

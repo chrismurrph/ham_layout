@@ -1,13 +1,13 @@
-package example;
+package au.com.seasoft.ham;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class MyNode {
+public class InteropNode {
     public int id;
 
-    public MyNode(int id) {
+    public InteropNode(int id) {
         this.id = id;
     }
 
@@ -20,9 +20,9 @@ public class MyNode {
     @Override
     public boolean equals(final Object compareObj)
     {
-        if( !(compareObj instanceof MyNode) )
+        if( !(compareObj instanceof InteropNode) )
             return false;
-        final MyNode compareWith = (MyNode) compareObj;
+        final InteropNode compareWith = (InteropNode) compareObj;
         return compareWith.id == this.id;
     }
 
@@ -32,12 +32,12 @@ public class MyNode {
     }
 
     /*
-     * Can get rid of now using equals
+     * If want can get rid of now using equals...
      */
-    static List<Integer> convertToInts(List nodes) {
+    public static List<Integer> convertToInts(List nodes) {
         List<Integer> result = new ArrayList<>();
         for(final Object node : nodes){
-            result.add( ((MyNode)node).id);
+            result.add( ((InteropNode)node).id);
         }
         return result;
     }
