@@ -12,6 +12,18 @@ public class ExampleGraph implements Graph {
     private Set<MyNode> nodes = new HashSet<MyNode>();
     private Set<MyEdge> edges = new HashSet<MyEdge>();
 
+//    {:12 {}
+//     :11 {:12 10}
+//     :10 {:12 3}
+//     :4  {:2 4}
+//     :7  {:6 1 :8 11}
+//     :1  {:3 5}
+//     :8  {:9 20}
+//     :9  {:10 17 :11 5}
+//     :2  {:1 10}
+//     :5  {:6 9 :7 3}
+//     :3  {:5 6 :8 2}
+//     :6  {}}
     public ExampleGraph() {
         MyNode node1 = new MyNode( 1);
         MyNode node2 = new MyNode( 2);
