@@ -67,9 +67,12 @@ public class HyperassociativeMap<G extends Graph<N, ?>, N> implements GraphDrawe
 	private double maxMovement = DEFAULT_MAX_MOVEMENT;
 	private double totalMovement = DEFAULT_TOTAL_MOVEMENT;
 	private double acceptableDistanceFactor = DEFAULT_ACCEPTABLE_DISTANCE_FACTOR;
+	private final boolean DEBUG = false;
 
 	private void debug(String msg) {
-	    System.out.println( msg);
+	    if (DEBUG) {
+            System.out.println(msg);
+        }
     }
     private void warn(String msg, Exception ex) {
         System.out.println( "WARN" + msg);
@@ -166,6 +169,21 @@ public class HyperassociativeMap<G extends Graph<N, ?>, N> implements GraphDrawe
 	{
 		return true;
 	}
+
+//	(defn aligned-metrics [ham-st]
+//        (let [{:keys [max-movement equilibrium-distance]} ham-st
+//              needs-be-pos-1 (- (* EQUILIBRIUM_ALIGNMENT_FACTOR equilibrium-distance) max-movement)
+//              needs-be-pos-2 (- max-movement DEFAULT_MAX_MOVEMENT)]
+//          #_(and
+//              (pos? needs-be-pos-1)
+//              (pos? needs-be-pos-2))
+//          [needs-be-pos-1 needs-be-pos-2]))
+
+    public String alignedMetrics(){
+        double needsBePos1 = (EQUILIBRIUM_ALIGNMENT_FACTOR * equilibriumDistance) - maxMovement;
+        double needsBePos2 = maxMovement - DEFAULT_MAX_MOVEMENT;
+        return "BOTH +ive?: " + needsBePos1 + ", " + needsBePos2;
+    }
 
 	public boolean isAligned()
 	{

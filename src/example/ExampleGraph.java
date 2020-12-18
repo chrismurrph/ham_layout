@@ -7,12 +7,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class MyGraph implements Graph {
+public class ExampleGraph implements Graph {
 
     private Set<MyNode> nodes = new HashSet<MyNode>();
     private Set<MyEdge> edges = new HashSet<MyEdge>();
 
-    public MyGraph() {
+    public ExampleGraph() {
         MyNode node1 = new MyNode( 1);
         MyNode node2 = new MyNode( 2);
         MyNode node3 = new MyNode( 3);
@@ -71,10 +71,10 @@ public class MyGraph implements Graph {
         List<MyNode> result = new ArrayList<MyNode>();
         MyNode node = (MyNode)obj;
         for(final MyEdge edge : edges){
-            if(edge.sourceNode == node) {
+            if(edge.sourceNode.id == node.id) {
                 result.add( edge.targetNode);
             }
-            if(edge.targetNode == node) {
+            if(edge.targetNode.id == node.id) {
                 result.add( edge.sourceNode);
             }
         }
@@ -89,10 +89,10 @@ public class MyGraph implements Graph {
         Set<MyEdge> result = new HashSet<MyEdge>();
         MyNode node = (MyNode)obj;
         for(final MyEdge edge : edges){
-            if(edge.sourceNode == node) {
+            if(edge.sourceNode.id == node.id) {
                 result.add( edge);
             }
-            if(edge.targetNode == node) {
+            if(edge.targetNode.id == node.id) {
                 result.add( edge);
             }
         }
@@ -109,7 +109,7 @@ public class MyGraph implements Graph {
         List<MyNode> result = new ArrayList<MyNode>();
         MyNode node = (MyNode)obj;
         for(final MyEdge edge : edges){
-            if(edge.sourceNode == node) {
+            if(edge.sourceNode.id == node.id) {
                 result.add( edge.targetNode);
             }
         }
@@ -118,6 +118,7 @@ public class MyGraph implements Graph {
 
     /*
      * All the edges that the given node leads in.
+     * Not used so not worth having/testing
      */
     @Override
     public Set getTraversableEdges(Object obj) {

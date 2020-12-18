@@ -16,6 +16,31 @@ public class MyEdge implements TraversableCloud {
     }
 
     @Override
+    public String toString()
+    {
+        return "[" + this.sourceNode.id + ", " + this.targetNode.id + "]";
+    }
+
+    @Override
+    public boolean equals(final Object compareObj)
+    {
+        if( !(compareObj instanceof MyEdge) )
+            return false;
+        final MyEdge compareWith = (MyEdge) compareObj;
+        return (compareWith.sourceNode.id == this.sourceNode.id &&
+                compareWith.targetNode.id == this.targetNode.id);
+    }
+
+    @Override
+    public int hashCode() {
+        int prime = 31;
+        int result = 1;
+        result = prime * result + ((sourceNode == null) ? 0 : sourceNode.hashCode());
+        result = prime * result + ((targetNode == null) ? 0 : targetNode.hashCode());
+        return result;
+    }
+
+    @Override
     public boolean isTraversable(Object node) {
         throw new Error( "Don't need isTraversable");
     }
