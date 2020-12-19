@@ -7,8 +7,8 @@ import java.util.Collection;
 import java.util.List;
 
 public class InteropEdge implements TraversableCloud {
-    public InteropNode sourceNode;
-    public InteropNode targetNode;
+    private InteropNode sourceNode;
+    private InteropNode targetNode;
 
     public InteropEdge(InteropNode sourceNode, InteropNode targetNode) {
         this.sourceNode = sourceNode;
@@ -18,7 +18,7 @@ public class InteropEdge implements TraversableCloud {
     @Override
     public String toString()
     {
-        return "[" + this.sourceNode.id + ", " + this.targetNode.id + "]";
+        return "[" + this.sourceNode.getId() + ", " + this.targetNode.getId() + "]";
     }
 
     @Override
@@ -27,8 +27,8 @@ public class InteropEdge implements TraversableCloud {
         if( !(compareObj instanceof InteropEdge) )
             return false;
         final InteropEdge compareWith = (InteropEdge) compareObj;
-        return (compareWith.sourceNode.id == this.sourceNode.id &&
-                compareWith.targetNode.id == this.targetNode.id);
+        return (compareWith.sourceNode.getId() == this.sourceNode.getId() &&
+                compareWith.targetNode.getId() == this.targetNode.getId());
     }
 
     @Override
@@ -66,6 +66,14 @@ public class InteropEdge implements TraversableCloud {
         pack.add(leftNode);
         pack.add(rightNode);
         return pack;
+    }
+
+    public InteropNode getSourceNode() {
+        return sourceNode;
+    }
+
+    public InteropNode getTargetNode() {
+        return targetNode;
     }
 
     @Override

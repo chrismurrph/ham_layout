@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class InteropNode {
-    public int id;
+    private int id;
 
     public InteropNode(int id) {
         this.id = id;
@@ -29,6 +29,10 @@ public class InteropNode {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    public int getId() {
+        return id;
     }
 
     /*

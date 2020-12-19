@@ -43,7 +43,7 @@ public class InteropHAM extends HyperassociativeMap {
 
     public static void displayCoords(Map<Object, Object> coords) {
         for (Map.Entry<Object, Object> entry : coords.entrySet()) {
-            debug(String.format("%02d", ((InteropNode) entry.getKey()).id) +
+            debug(String.format("%02d", ((InteropNode) entry.getKey()).getId()) +
                     " " + entry.getValue());
         }
     }

@@ -49,11 +49,11 @@ public class GenericGraph implements Graph {
         List<InteropNode> result = new ArrayList<InteropNode>();
         InteropNode node = (InteropNode)obj;
         for(final InteropEdge edge : edges){
-            if(edge.sourceNode.id == node.id) {
-                result.add( edge.targetNode);
+            if(edge.getSourceNode().getId() == node.getId()) {
+                result.add( edge.getTargetNode());
             }
-            if(edge.targetNode.id == node.id) {
-                result.add( edge.sourceNode);
+            if(edge.getTargetNode().getId() == node.getId()) {
+                result.add( edge.getSourceNode());
             }
         }
         return result;
@@ -67,10 +67,10 @@ public class GenericGraph implements Graph {
         Set<InteropEdge> result = new HashSet<InteropEdge>();
         InteropNode node = (InteropNode)obj;
         for(final InteropEdge edge : edges){
-            if(edge.sourceNode.id == node.id) {
+            if(edge.getSourceNode().getId() == node.getId()) {
                 result.add( edge);
             }
-            if(edge.targetNode.id == node.id) {
+            if(edge.getTargetNode().getId() == node.getId()) {
                 result.add( edge);
             }
         }
@@ -87,8 +87,8 @@ public class GenericGraph implements Graph {
         List<InteropNode> result = new ArrayList<InteropNode>();
         InteropNode node = (InteropNode)obj;
         for(final InteropEdge edge : edges){
-            if(edge.sourceNode.id == node.id) {
-                result.add( edge.targetNode);
+            if(edge.getSourceNode().getId() == node.getId()) {
+                result.add( edge.getTargetNode());
             }
         }
         return result;
@@ -103,7 +103,7 @@ public class GenericGraph implements Graph {
         Set<InteropEdge> result = new HashSet<InteropEdge>();
         InteropNode node = (InteropNode)obj;
         for(final InteropEdge edge : edges){
-            if(edge.sourceNode == node) {
+            if(edge.getSourceNode().getId() == node.getId()) {
                 result.add( edge);
             }
         }
