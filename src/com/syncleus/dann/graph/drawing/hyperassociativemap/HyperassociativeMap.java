@@ -45,14 +45,13 @@ import java.util.Random;
  */
 public class HyperassociativeMap<G extends Graph<N, ?>, N> implements GraphDrawer<G, N>
 {
-    // Changing from 2.0 to 1.0 made nodes more spread out
-	private static final double REPULSIVE_WEAKNESS = 1.0;
+	private static final double REPULSIVE_WEAKNESS = 2.0;
 	private static final double ATTRACTION_STRENGTH = 4.0;
 	private static final double DEFAULT_LEARNING_RATE = 0.4;
 	private static final double DEFAULT_MAX_MOVEMENT = 0.0;
 	private static final double DEFAULT_TOTAL_MOVEMENT = 0.0;
-	private static final double DEFAULT_ACCEPTABLE_DISTANCE_FACTOR = 0.75;
-	private static final double EQUILIBRIUM_DISTANCE = 1.0;
+	private static final double DEFAULT_ACCEPTABLE_DISTANCE_FACTOR = 2.0;
+	private static final double EQUILIBRIUM_DISTANCE = 2.5;
 	private static final double EQUILIBRIUM_ALIGNMENT_FACTOR = 0.005;
 	private static final double LEARNING_RATE_INCREASE_FACTOR = 0.9;
 	private static final double LEARNING_RATE_PROCESSING_ADJUSTMENT = 1.01;

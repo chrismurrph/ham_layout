@@ -13,18 +13,19 @@ import java.util.Map;
  * What I have seen is that it is better to try again rather than have a high value for maxAligns.
  * I want to assume that there's no tuning that needs to be done for the number of nodes/edges.
  * From experience of my simple graph if it gets the alignment done soon or not at all.
- * By 500 or still won't be done by 10,000.
+ * If not by 500 then still won't be done by 10,000.
  * The HyperassociativeMap can be made to use futures (so multi-threading) for the alignment of each node. We
  * don't use this feature as it is only about performance.
- * If after 20 alignment doesn't happen then just tell the user 'sorry' via the UI.
+ * If all 20 exhaust their alignments then just tell the user 'sorry' via the UI.
  */
 public class InteropHAM extends HyperassociativeMap {
 
     private static void debug(String msg) {
         System.out.println(msg);
     }
+    private int counter;
 
-    public static HyperassociativeMap attemptToAlign(HyperassociativeMap ham, int maxAligns, boolean silent) {
+    public static InteropHAM attemptToAlign(InteropHAM ham, int maxAligns, boolean silent) {
         int counter = 0;
         do {
             ham.align();
@@ -38,6 +39,7 @@ public class InteropHAM extends HyperassociativeMap {
                 debug("Not able to align graph after " + counter + " times, " + ham.alignedMetrics());
             }
         }
+        ham.setCounter( counter);
         return ham;
     }
 
@@ -52,7 +54,15 @@ public class InteropHAM extends HyperassociativeMap {
         super(graph, dimensions);
     }
 
-    public static HyperassociativeMap create(Graph graph, int dimensions) {
+    public int getCounter() {
+        return counter;
+    }
+
+    public void setCounter(int counter) {
+        this.counter = counter;
+    }
+
+    public static InteropHAM create(Graph graph, int dimensions) {
         return new InteropHAM( graph, dimensions);
     }
 }
