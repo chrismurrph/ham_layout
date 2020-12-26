@@ -1,0 +1,6 @@
+{:paths   ["src/"]
+ :deps    {org.clojure/clojure       {:mvn/version "1.10.1" :scope "provided"}}
+ :aliases {:deploy {:extra-deps {slipset/deps-deploy {:mvn/version "RELEASE"}}
+                    :main-opts ["-m" "deps-deploy.deps-deploy" "deploy"
+                                "ham.jar"]}}
+ }

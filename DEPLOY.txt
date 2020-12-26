@@ -1,0 +1,17 @@
+Creating and deploying jar files
+--------------------------------
+
+See my project dev-lib for more info.
+
+These steps still significant:
+
+5./ Deploy the jar to Clojars (slipset/deps-deploy)
+env CLOJARS_USERNAME=cjmurphy CLOJARS_PASSWORD=CLOJARS_blahblah clj -A:deploy
+6./ Use it in client project's deps.edn files rather than source code or a local root
+
+But this is a Java source code project so we use maven to create the jar file (step 4). I couldn't find the mvn command
+I used but `mvn package` should work. Whatever works to get a thin jar file with classes in it. Copy it from target directory to
+ham.jar in root, overwriting current one there. Then onto step 5.
+
+Do not tell your IDE that this is a Clojure project - the deps.edn only exists so you can clj -A:deploy from the
+command line.

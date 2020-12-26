@@ -22,27 +22,52 @@
 
     <modelVersion>4.0.0</modelVersion>
     <packaging>jar</packaging>
-    <groupId>au.com.seasoft.ham</groupId>
+    <groupId>cjmurphy</groupId>
     <artifactId>ham</artifactId>
-    <version>0.9-SNAPSHOT</version>
+    <version>0.9.1</version>
+
+    <licenses>
+        <license>
+            <name>Open Source Community License - Type C version 1.0</name>
+            <url>www.syncleus.com</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <build>
+        <sourceDirectory>src/</sourceDirectory>
+    </build>
 
     <properties>
         <project.build.encoding>UTF-8</project.build.encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
     <name>HyperassociativeMap wrapper</name>
-    <description>HyperassociativeMap for graphs only known about at runtime</description>
-    <url>http://wiki.syncleus.com/index.php/DANN</url>
+    <description>HyperassociativeMap for graphs may only known about at runtime</description>
+    <url>https://github.com/chrismurrph/ham_layout</url>
+
+    <scm>
+        <url>https://github.com/chrismurrph/ham_layout.git</url>
+        <connection>scm:git:git://github.com/chrismurrph/ham_layout.git</connection>
+    </scm>
+
+    <repositories>
+        <repository>
+            <id>clojars</id>
+            <url>https://repo.clojars.org/</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>
