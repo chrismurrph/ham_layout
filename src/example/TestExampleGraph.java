@@ -75,6 +75,8 @@ public class TestExampleGraph {
      * This test will fail if expectedTraversableNodes are added in the order 8 then 6.
      * The traversable nodes not being a set makes no sense.
      * Need to study code. May not mean there's a bug...
+     * Checked and no possible bug because `getTraversableNodes` is not used by `HyperassociativeMap` and could
+     * be deleted.
      */
     @Test
     public void traversableNodes3() {

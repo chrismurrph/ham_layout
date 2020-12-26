@@ -80,6 +80,7 @@ public class GenericGraph implements Graph {
     /*
      * Go thru all the edges where the given node is the source node, and grab the target node.
      * Can traverse to the target node.
+     * Not used by anything other than tests.
      */
     @Override
     public List getTraversableNodes(Object obj)
@@ -96,7 +97,7 @@ public class GenericGraph implements Graph {
 
     /*
      * All the edges that the given node leads in.
-     * Not used so not worth having/testing
+     * Not used so not worth having, and there are no tests.
      */
     @Override
     public Set getTraversableEdges(Object obj) {

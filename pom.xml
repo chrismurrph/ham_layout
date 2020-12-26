@@ -1,0 +1,48 @@
+<!--
+ *******************************************************************************
+ *  Copyright: (c) Syncleus, Inc.                                              *
+ *                                                                             *
+ *  You may redistribute and modify this source code under the terms and       *
+ *  conditions of the Open Source Community License - Type C version 1.0       *
+ *  or any later version as published by Syncleus, Inc. at www.syncleus.com.   *
+ *  There should be a copy of the license included with this file. If a copy   *
+ *  of the license is not included you are granted no right to distribute or   *
+ *  otherwise use this file except through a legal and valid license. You      *
+ *  should also contact Syncleus, Inc. at the information below if you cannot  *
+ *  find a license:                                                            *
+ *                                                                             *
+ *  Syncleus, Inc.                                                             *
+ *  2604 South 12th Street                                                     *
+ *  Philadelphia, PA 19148                                                     *
+ *******************************************************************************
+-->
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>jar</packaging>
+    <groupId>au.com.seasoft.ham</groupId>
+    <artifactId>ham</artifactId>
+    <version>0.9-SNAPSHOT</version>
+
+    <properties>
+        <project.build.encoding>UTF-8</project.build.encoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
+    </properties>
+
+    <name>HyperassociativeMap wrapper</name>
+    <description>HyperassociativeMap for graphs only known about at runtime</description>
+    <url>http://wiki.syncleus.com/index.php/DANN</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

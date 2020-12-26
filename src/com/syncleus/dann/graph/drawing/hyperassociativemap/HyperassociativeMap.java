@@ -32,6 +32,12 @@ import java.util.Map;
 import java.util.Random;
 
 /**
+ * The original source:
+ * https://github.com/Syncleus/dANN-core/blob/v2.x/src/main/java/com/syncleus/dann/graph/drawing/hyperassociativemap/HyperassociativeMap.java
+ * A 'straight copy' isolating HyperassociativeMap.java from the rest of the code. After copying changed the logging and
+ * altered values for DEFAULT_ACCEPTABLE_DISTANCE_FACTOR and EQUILIBRIUM_DISTANCE, and added the function `alignedMetrics`.
+ *
+ *
  * A Hyperassociative Map is a new type of algorithm that organizes an arbitrary
  * graph of interconnected nodes according to its associations to other nodes.
  * Once a new Hyperassociative Map has been associated and aligned, nodes that
@@ -50,7 +56,9 @@ public class HyperassociativeMap<G extends Graph<N, ?>, N> implements GraphDrawe
 	private static final double DEFAULT_LEARNING_RATE = 0.4;
 	private static final double DEFAULT_MAX_MOVEMENT = 0.0;
 	private static final double DEFAULT_TOTAL_MOVEMENT = 0.0;
+	// In original source is 0.75
 	private static final double DEFAULT_ACCEPTABLE_DISTANCE_FACTOR = 2.0;
+	// In original source is 1.0
 	private static final double EQUILIBRIUM_DISTANCE = 2.5;
 	private static final double EQUILIBRIUM_ALIGNMENT_FACTOR = 0.005;
 	private static final double LEARNING_RATE_INCREASE_FACTOR = 0.9;
@@ -170,15 +178,7 @@ public class HyperassociativeMap<G extends Graph<N, ?>, N> implements GraphDrawe
 		return true;
 	}
 
-//	(defn aligned-metrics [ham-st]
-//        (let [{:keys [max-movement equilibrium-distance]} ham-st
-//              needs-be-pos-1 (- (* EQUILIBRIUM_ALIGNMENT_FACTOR equilibrium-distance) max-movement)
-//              needs-be-pos-2 (- max-movement DEFAULT_MAX_MOVEMENT)]
-//          #_(and
-//              (pos? needs-be-pos-1)
-//              (pos? needs-be-pos-2))
-//          [needs-be-pos-1 needs-be-pos-2]))
-
+	// Did not exist in original source
     public String alignedMetrics(){
         double needsBePos1 = (EQUILIBRIUM_ALIGNMENT_FACTOR * equilibriumDistance) - maxMovement;
         double needsBePos2 = maxMovement - DEFAULT_MAX_MOVEMENT;

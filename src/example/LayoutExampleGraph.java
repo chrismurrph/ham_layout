@@ -1,7 +1,6 @@
 package example;
 
 import au.com.seasoft.ham.InteropHAM;
-import com.syncleus.dann.graph.drawing.hyperassociativemap.HyperassociativeMap;
 
 import java.util.Map;
 public class LayoutExampleGraph {

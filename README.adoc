@@ -1,0 +1,15 @@
+:source-highlighter: coderay
+:source-language: clojure
+:toc:
+:toc-placement: preamble
+:sectlinks:
+:sectanchors:
+:sectnums:
+
+== Rationale
+
+This library provides a runtime-friendly way to use HyperassociativeMap by including a graph class (GenericGraph)
+that you can dynamically add nodes and edges to. The original source from here is included and largely unaltered:
+
+https://github.com/Syncleus/dANN-core/blob/v2.x/src/main/java/com/syncleus/dann/graph/drawing/hyperassociativemap/HyperassociativeMap.java
+
