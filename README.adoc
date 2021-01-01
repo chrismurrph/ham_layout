@@ -19,7 +19,7 @@ See the `example` package for some tests and an example of how to use from Java.
 graph: first create all the nodes as new instances of `InteropNode`, then use these nodes to create `InteropEdge` s.
 `GenericGraph` has `addNode` and `addEdge` methods. After adding nodes and edges to your graph you are in a
 position to create an `InteropHAM` and call its static function `attemptToAlign`, which takes, mutates and returns
-an `InteropHAM` - a thin wrapper around the original HyperassociativeMap, that adds the property `counter` - the the
-number of advances made in the attempt to align the graph, whether or not `isAligned()` is returning true.
+an `InteropHAM` - a thin wrapper around the original HyperassociativeMap, that adds the property `counter` - the
+number of advances made in the attempt to align the graph, whether or not `isAligned()` has become true.
 
-The primary intended use of this library is to layout a graph from Clojure. See: <not yet completed>.
+The primary intended use of this library is to layout a graph from Clojure. See: https://github.com/chrismurrph/show-graph.
