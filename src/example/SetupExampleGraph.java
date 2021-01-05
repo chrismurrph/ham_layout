@@ -32,18 +32,18 @@ class SetupExampleGraph {
 //     :3  {:5 6 :8 2}
 //     :6  {}}
     SetupExampleGraph() {
-        InteropNode node1 = new InteropNode( 1);
-        InteropNode node2 = new InteropNode( 2);
-        InteropNode node3 = new InteropNode( 3);
-        InteropNode node4 = new InteropNode( 4);
-        InteropNode node5 = new InteropNode( 5);
-        InteropNode node6 = new InteropNode( 6);
-        InteropNode node7 = new InteropNode( 7);
-        InteropNode node8 = new InteropNode( 8);
-        InteropNode node9 = new InteropNode( 9);
-        InteropNode node10 = new InteropNode( 10);
-        InteropNode node11 = new InteropNode( 11);
-        InteropNode node12 = new InteropNode( 12);
+        InteropNode node1 = new InteropNode( "1");
+        InteropNode node2 = new InteropNode( "2");
+        InteropNode node3 = new InteropNode( "3");
+        InteropNode node4 = new InteropNode( "4");
+        InteropNode node5 = new InteropNode( "5");
+        InteropNode node6 = new InteropNode( "6");
+        InteropNode node7 = new InteropNode( "7");
+        InteropNode node8 = new InteropNode( "8");
+        InteropNode node9 = new InteropNode( "9");
+        InteropNode node10 = new InteropNode( "10");
+        InteropNode node11 = new InteropNode( "11");
+        InteropNode node12 = new InteropNode( "12");
         graph = GenericGraph.create();
         graph.addNode( node1);
         graph.addNode( node2);
