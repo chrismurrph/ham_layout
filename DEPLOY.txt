@@ -5,6 +5,7 @@ See my project dev-lib for more info.
 
 These steps still significant:
 
+4./ SEE BELOW...
 5./ Deploy the jar to Clojars (slipset/deps-deploy)
 env CLOJARS_USERNAME=cjmurphy CLOJARS_PASSWORD=CLOJARS_blahblah clj -A:deploy
 6./ Use it in client project's deps.edn files rather than source code or a local root
@@ -15,3 +16,6 @@ Copy it from target directory to ham.jar in root, overwriting current one that's
 
 If your IDE is IntelliJ/Cursive do not tell it that this is a Clojure project - the deps.edn only exists so you can
 deploy the jar to Clojars (`clj -A:deploy`) from the command line.
+
+We are now back to 0.9.1 in pom.xml, but next deploy s/be 0.9.4, as we used up the other versions on experiments with
+having ids as strings, which didn't work. So 0.9.2 and 0.9.3 exist but don't work and are never to be used.
