@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.Objects;
 
 public class InteropNode {
-    private String id;
+    private int id;
 
-    public InteropNode(String id) {
+    public InteropNode(int id) {
         this.id = id;
     }
 
@@ -31,15 +31,15 @@ public class InteropNode {
         return Objects.hash(id);
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
     /*
      * If want can get rid of now using equals...
      */
-    public static List<String> convertToStrings(List nodes) {
-        List<String> result = new ArrayList<>();
+    public static List<Integer> convertToInts(List nodes) {
+        List<Integer> result = new ArrayList<>();
         for(final Object node : nodes){
             result.add( ((InteropNode)node).id);
         }
